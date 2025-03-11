@@ -17,7 +17,7 @@ namespace VContainer.Diagnostics
 
         StackFrame headLineStackFrame;
 
-        internal string formattedStackTrace = default; // cache field for internal use(Unity Editor, etc...)
+        public string formattedStackTrace = default; // cache field for public use(Unity Editor, etc...)
 
         public RegisterInfo(RegistrationBuilder registrationBuilder)
         {

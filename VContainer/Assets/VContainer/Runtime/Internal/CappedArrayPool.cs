@@ -4,7 +4,7 @@ namespace VContainer.Internal
 {
     sealed class CappedArrayPool<T>
     {
-        internal const int InitialBucketSize = 4;
+        public const int InitialBucketSize = 4;
 
         public static readonly CappedArrayPool<T> Shared8Limit = new CappedArrayPool<T>(8);
 
@@ -12,7 +12,7 @@ namespace VContainer.Internal
         readonly object syncRoot = new object();
         readonly int[] tails;
 
-        internal CappedArrayPool(int maxLength)
+        public CappedArrayPool(int maxLength)
         {
             buckets = new T[maxLength][][];
             tails = new int[maxLength];

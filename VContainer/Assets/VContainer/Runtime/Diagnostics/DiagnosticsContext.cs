@@ -48,7 +48,7 @@ namespace VContainer.Diagnostics
             OnContainerBuilt?.Invoke(container);
         }
 
-        internal static DiagnosticsInfo FindByRegistration(Registration registration)
+        public static DiagnosticsInfo FindByRegistration(Registration registration)
         {
             return GetDiagnosticsInfos().FirstOrDefault(x => x.ResolveInfo.Registration == registration);
         }

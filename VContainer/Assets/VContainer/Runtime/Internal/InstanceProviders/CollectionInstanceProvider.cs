@@ -84,7 +84,7 @@ namespace VContainer.Internal
             return array;
         }
 
-        internal object SpawnInstance(IObjectResolver currentScope, IReadOnlyList<RegistrationElement> entirelyRegistrations)
+        public object SpawnInstance(IObjectResolver currentScope, IReadOnlyList<RegistrationElement> entirelyRegistrations)
         {
             var array = Array.CreateInstance(ElementType, entirelyRegistrations.Count);
             for (var i = 0; i < entirelyRegistrations.Count; i++)
@@ -98,7 +98,7 @@ namespace VContainer.Internal
             return array;
         }
 
-        internal void CollectFromParentScopes(
+        public void CollectFromParentScopes(
             IScopedObjectResolver scope,
             List<RegistrationElement> registrationsBuffer,
             bool localScopeOnly = false)

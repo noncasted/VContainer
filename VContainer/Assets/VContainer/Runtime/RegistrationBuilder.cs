@@ -6,11 +6,11 @@ namespace VContainer
 {
     public class RegistrationBuilder
     {
-        protected internal readonly Type ImplementationType;
-        protected internal readonly Lifetime Lifetime;
+        protected public readonly Type ImplementationType;
+        protected public readonly Lifetime Lifetime;
 
-        protected internal List<Type> InterfaceTypes;
-        protected internal List<IInjectParameter> Parameters;
+        protected public List<Type> InterfaceTypes;
+        protected public List<IInjectParameter> Parameters;
 
         public RegistrationBuilder(Type implementationType, Lifetime lifetime)
         {

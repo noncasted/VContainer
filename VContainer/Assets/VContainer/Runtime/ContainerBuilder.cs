@@ -26,7 +26,7 @@ namespace VContainer
         readonly IObjectResolver root;
         readonly IScopedObjectResolver parent;
 
-        internal ScopedContainerBuilder(IObjectResolver root, IScopedObjectResolver parent)
+        public ScopedContainerBuilder(IObjectResolver root, IScopedObjectResolver parent)
         {
             this.root = root;
             this.parent = parent;

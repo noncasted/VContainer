@@ -38,19 +38,19 @@ namespace VContainer.Unity
         ComponentDestination destination;
         Scene scene;
 
-        internal ComponentRegistrationBuilder(object instance)
-            : base(instance.GetType(), Lifetime.Singleton)
+        public ComponentRegistrationBuilder(object instance, Lifetime lifetime)
+            : base(instance.GetType(), lifetime)
         {
             this.instance = instance;
         }
 
-        internal ComponentRegistrationBuilder(in Scene scene, Type implementationType)
-            : base(implementationType, Lifetime.Singleton)
+        public ComponentRegistrationBuilder(in Scene scene, Type implementationType, Lifetime lifetime)
+            : base(implementationType, lifetime)
         {
             this.scene = scene;
         }
 
-        internal ComponentRegistrationBuilder(
+        public ComponentRegistrationBuilder(
             Func<IObjectResolver, Component> prefabFinder,
             Type implementationType,
             Lifetime lifetime)
@@ -59,7 +59,7 @@ namespace VContainer.Unity
             this.prefabFinder = prefabFinder;
         }
 
-        internal ComponentRegistrationBuilder(
+        public ComponentRegistrationBuilder(
             string gameObjectName,
             Type implementationType,
             Lifetime lifetime)

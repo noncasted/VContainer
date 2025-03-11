@@ -9,7 +9,7 @@ namespace VContainer.Unity {
 		readonly string worldName;
 		Type systemGroupType;
 
-		internal SystemRegistrationBuilder(Type implementationType, string worldName)
+		public SystemRegistrationBuilder(Type implementationType, string worldName)
 			: base(implementationType, default) {
 			this.worldName = worldName;
 			InterfaceTypes = new List<Type> {

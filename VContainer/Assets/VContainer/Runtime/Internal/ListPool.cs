@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VContainer.Internal
 {
-    internal static class ListPool<T>
+    public static class ListPool<T>
     {
         const int DefaultCapacity = 32;
 
@@ -12,7 +12,7 @@ namespace VContainer.Internal
         /// <summary>
         /// BufferScope supports releasing a buffer with using clause.
         /// </summary>
-        internal readonly struct BufferScope : IDisposable
+        public readonly struct BufferScope : IDisposable
         {
             private readonly List<T> _buffer;
 
@@ -31,7 +31,7 @@ namespace VContainer.Internal
         /// Get a buffer from the pool.
         /// </summary>
         /// <returns></returns>
-        internal static List<T> Get()
+        public static List<T> Get()
         {
             lock (_pool)
             {
@@ -49,7 +49,7 @@ namespace VContainer.Internal
         /// </summary>
         /// <param name="buffer"></param>
         /// <returns></returns>
-        internal static BufferScope Get(out List<T> buffer)
+        public static BufferScope Get(out List<T> buffer)
         {
             buffer = Get();
             return new BufferScope(buffer);
@@ -59,7 +59,7 @@ namespace VContainer.Internal
         /// Declare a buffer won't be used anymore and put it back to the pool.  
         /// </summary>
         /// <param name="buffer"></param>
-        internal static void Release(List<T> buffer)
+        public static void Release(List<T> buffer)
         {
             buffer.Clear();
             lock (_pool)

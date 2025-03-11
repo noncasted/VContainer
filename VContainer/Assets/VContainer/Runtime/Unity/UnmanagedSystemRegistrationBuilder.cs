@@ -11,7 +11,7 @@ namespace VContainer.Unity
         readonly string worldName;
         Type systemGroupType;
 
-        internal UnmanagedSystemRegistrationBuilder(Type implementationType, string worldName)
+        public UnmanagedSystemRegistrationBuilder(Type implementationType, string worldName)
             : base(implementationType, default)
         {
             this.worldName = worldName;
